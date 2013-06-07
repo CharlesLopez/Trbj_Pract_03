@@ -1,0 +1,7 @@
+estados unidos
+john|5/|x|x|5/|3/|5/|x|x|x|x15
+robert|5/|x|7/|9/|5/|x|x|8/|9/|x5/
+louis|9/|4/|5/|x|5/|x|9/|2/|x|xxx
+nicole|6/|7/|x|x|9/|72|9/|x|9/|5/x
+paul|42|x|x|x|5/|5/|7/|9/|x|xxx
+keith|7/|8/|71|81|x|x|x|7/|x|x6/
