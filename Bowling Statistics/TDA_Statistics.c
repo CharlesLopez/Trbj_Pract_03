@@ -1,8 +1,5 @@
 # include <stdio.h>
 # include "TDA_Statistics.h"
-# define MAYOR 1
-# define MENOR -1
-# define IGUAL 0
 
 int StatsCrear(TDA_Statistics* Statistics){
 

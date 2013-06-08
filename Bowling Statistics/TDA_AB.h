@@ -1,20 +1,48 @@
-#include "ab.h"
-#include <memory.h>
+#ifndef __AB_H__
+    #define __AB_H__
+    #include <stdlib.h>
+    #ifndef (IZQ)
+        #define IZQ 1
+    #endif
 
-void AB_Crear(TAB *a,int tdato);
+    #ifndef (DER)
+        #define DER 2
+    #endif
 
-void AB_ElemCte(TAB a,void *elem);
+    #ifndef (PAD)
+        #define PAD 3
+    #endif
 
-TNodoAB* BuscarPadre(TNodoAB *padre,TNodoAB *hijo);
+    #ifndef (RAIZ)
+        #define RAIZ 4
+    #endif
 
-void VaciarSub(TNodoAB *pnodo);
+typedef struct TNodoAB{
+    void* Elem;
+    struct TNodoAB *Izq, *Der;
+} TNodoAB;
+
+typedef struct TAB{
+    TNodoAB *Raiz,*Cte;
+    int TamDato;
+} TAB;
+
+void AB_Crear(TAB *Arbol, int TamDatoElem);
+
+void AB_ElemCte(TAB Arbol, void *Elem);
+
+TNodoAB* BuscarPadre(TNodoAB *Padre, TNodoAB *Hijo);
+
+void VaciarSub(TNodoAB *PNodo);
 
 void AB_Vaciar(TAB *Arbol);
 
-void AB_ModifCte(TAB *Arbol,void *elem);
+void AB_ModifCte(TAB *Arbol, void *Elem);
 
-void AB_Insertar(TAB *Arbol,int Movimiento,void *elem,int *error);
+void AB_Insertar(TAB *Arbol, int Movimiento, void *Elem, int *Error);
 
 int AB_Vacio(TAB Arbol);
 
-void AB_MoverCte(TAB *Arbol,int Movimiento,int *error);
+void AB_MoverCte(TAB *Arbol, int Movimiento, int *Error);
+
+#endif

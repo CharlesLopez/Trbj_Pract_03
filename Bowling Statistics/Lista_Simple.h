@@ -16,33 +16,30 @@
 		#define TRUE 1
 	#endif
 
-	/**
+	/*
 	 * Movimientos que va a manejar la estructura. Son de conocimiento público,
 	 * pero sólo deberían usarse para el manejo puntual de esta estructura.
 	 */
-	typedef enum
-	{
+	typedef enum{
 		L_Primero,
 		L_Siguiente,
 		L_Anterior
 	} TMovimiento_Ls;
 
-	/**
+	/*
 	 * Estructura auxiliar de la lista simple. Es privada y no debe usarse bajo
 	 * ningún concepto en la aplicación.
 	 */
-	typedef struct TNodoListaSimple
-	{
+	typedef struct TNodoListaSimple{
 		void* Elem;
 		struct TNodoListaSimple *Siguiente;
 	} TNodoListaSimple;
 
-	/**
+	/*
 	 * Estructura cabecera, este es el tipo que se deberá instanciar, aunque
 	 * nunca acceder a sus campos.
 	 */
-	typedef struct
-	{
+	typedef struct{
 		TNodoListaSimple *Primero, *Corriente;
 		int TamanioDato;
 	} TListaSimple;
@@ -106,7 +103,7 @@
 	int L_Insertar_Cte(TListaSimple *pLs, TMovimiento_Ls M, void* E);
 
 	/**
-     *L_ELEM_CTE
+     *L_MODIFICAR_CTE
 	 * Pre: Ls creada y no vacía.
 	 * Post: Se modifica el elemento corriente para que pase a tener los datos indicados en pE.*/
 	void L_Modificar_Cte(TListaSimple Ls, void *pE);
