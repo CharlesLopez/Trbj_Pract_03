@@ -24,11 +24,24 @@
     #if !defined(RES_ERROR_REGISTRAR_MUESTRA)
         #define RES_ERROR_REGISTRAR_MUESTRA 2
     #endif
+typedef struct nodo1{
+    char Nombre[20];       /* Nombre del jugador */
+    int Peso;              /* Cantidad de veces repetido */
+    int Tiros[4];          /* Cantidad de tiros por tipo. En 0 los strikes, 1 los spares, 2 las canaletas y 3 los demas */
+
+}NodoSamples;
+
+typedef struct nodo2{
+    char Liga[20];         /* Nombre de la liga */
+    char Nombre[20];       /* Nombre del jugador */
+
+}NodoPlayers;
 
 typedef struct{
     TAB Samples;
     TAB Players;
     TDA_Lista_Ordenada Lista;
+    int Creado;
 }TDA_Statistics;
 
 int StatsCrear(TDA_Statistics* Statistics);

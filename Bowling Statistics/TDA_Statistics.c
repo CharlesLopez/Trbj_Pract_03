@@ -23,3 +23,8 @@ int StatsObtenerEstadisticasLiga(TDA_Statistics* Statistics, const char* Liga, T
 
 
 }
+
+int DestruirStats(TDA_Statistics* Statistics){
+
+
+}
