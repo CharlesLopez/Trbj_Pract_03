@@ -1,5 +1,5 @@
-# include <stdio.h>
-# include "TDA_Statistics.h"
+#include <stdio.h>
+#include "TDA_Statistics.h"
 
 int StatsCrear(TDA_Statistics* Statistics){
     AB_Crear(Statistics->Samples, sizeof(NodoSamples));
