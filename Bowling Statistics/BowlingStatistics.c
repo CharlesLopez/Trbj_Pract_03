@@ -5,7 +5,7 @@
 #include "TDA_Score.h"
 #include "TDA_Lista_Ordenada.h"
 #include "TDA_Statistics.h"
-#include "TDA_Resultado_Jugador.h"
+#include "TDA_Stats.h"
 #include "TDA_Stats.h"
 # define MAXDIR 255
 # define MAXCAR 20
