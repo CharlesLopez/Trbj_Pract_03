@@ -35,7 +35,7 @@ typedef struct{
 
 typedef struct Nodo1{
     char Nombre[20];       /* Nombre del jugador */
-    TScore Frecuencia[10];
+    TScore Frecuencia[10]; /* 10 por poner un numero */
     int Tiros[4];          /* Cantidad de tiros por tipo. En 0 los strikes, 1 los spares, 2 las canaletas y 3 los demas */
 }NodoSamples;
 

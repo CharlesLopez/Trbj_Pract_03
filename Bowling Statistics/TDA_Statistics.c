@@ -1,28 +1,17 @@
 #include <stdio.h>
+#include <string.h>
 #include "TDA_Statistics.h"
 
 int FCompararPlayers (void* Elemento1, void* Elemento2){
-    NodoJugador Elem1;
-    NodoJugador Elem2;
-    Elem1 = *(NodoJugador*)Elemento1;
-    Elem2 = *(NodoJugador*)Elemento2;
-    if (Elem2.Puntaje == Elem1.Puntaje)
-        return 0;
-    if (Elem2.Puntaje < Elem1.Puntaje)
-        return 1;
-    return -1;
+    NodoPlayers Elem1 = *(NodoPlayers*)Elemento1;
+    NodoPlayers Elem2 = *(NodoPlayers*)Elemento2;
+    return strcmp(Elem2.NombreJugador, Elem1.NombreJugador);
 }
 
 int FCompararSamples (void* Elemento1, void* Elemento2){
-    NodoJugador Elem1;
-    NodoJugador Elem2;
-    Elem1 = *(NodoJugador*)Elemento1;
-    Elem2 = *(NodoJugador*)Elemento2;
-    if (Elem2.Puntaje == Elem1.Puntaje)
-        return 0;
-    if (Elem2.Puntaje < Elem1.Puntaje)
-        return 1;
-    return -1;
+    NodoSamples Elem1 = *(NodoSamples*)Elemento1;
+    NodoSamples Elem2 = *(NodoSamples*)Elemento2;
+    return strcmp(Elem2.Frecuencia.Score, Elem1.Frecuencia.Score);
 }
 
 void FClonarPlayers (void* Elemento1, void* Elemento2){
@@ -30,6 +19,7 @@ void FClonarPlayers (void* Elemento1, void* Elemento2){
 }
 
 void FClonarSamples (void* Elemento1, void* Elemento2){
+
     return 0;
 }
 
