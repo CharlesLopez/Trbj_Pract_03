@@ -4,22 +4,21 @@
 
 /* Lo = Lista Ordenada*/
 
-int crearListaOrdenada(TDA_Lista_Ordenada* listaOrdenada, int tamaniodato, int (*comparar)(void*, void*), int (*clonar)(void*, void*), int (*Fdestruir)(void *)){
-    listaOrdenada->FComparar = comparar;
-    listaOrdenada->FClonar = clonar;
-    listaOrdenada->FDestruir = Fdestruir;
+int crearListaOrdenada(TDA_Lista_Ordenada* listaOrdenada, int tamaniodato, int (*Comparar)(void*, void*), int (*Clonar)(void*, void*), int (*Destruir)(void *)){
+    listaOrdenada->FComparar = Comparar;
+    listaOrdenada->FClonar = Clonar;
+    listaOrdenada->FDestruir = Destruir;
     listaOrdenada->tamanio=tamaniodato;
     L_Crear(&listaOrdenada->LS,tamaniodato);
 	return 1;
 }
 
 int insertarElementoOrdenado(TDA_Lista_Ordenada* listaOrdenada, void* elem){
-    void* aux=malloc(listaOrdenada->tamanio); /*Defino una variable auxiliar, donde guardo el nodo que saco para comparar*/
+    void* aux = malloc(listaOrdenada->tamanio); /*Defino una variable auxiliar, donde guardo el nodo que saco para comparar*/
     if (L_Vacia(listaOrdenada->LS)){
         free(aux);
-        return(L_Insertar_Cte(&listaOrdenada->LS, L_Primero, elem));    /*Si la lista esta vacia, inserto el elemento como el primero*/
+        return(L_Insertar_Cte(&listaOrdenada->LS, L_Primero, elem)); /*Si la lista esta vacia, inserto el elemento como el primero*/
     }
-
     L_Mover_Cte(&listaOrdenada->LS, L_Primero);
     L_Elem_Cte(listaOrdenada->LS, aux);
     if (listaOrdenada->FComparar(elem,aux)==1){ /*Si aux es menor, entonces inserta el elemento antes*/

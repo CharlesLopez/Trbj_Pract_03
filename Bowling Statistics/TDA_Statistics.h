@@ -1,6 +1,9 @@
 # ifndef __TDA_Statistics_H__
     #define __TDA_Statistics_H__
     #include "Lista_Simple.h"
+    #include "TDA_Score.h"
+    #include "TDA_Parcer.h"
+    #include "TDA_ABO.h"
     #if !defined(RES_OK)
         #define RES_OK 0
     #endif
@@ -24,22 +27,10 @@
     #if !defined(RES_ERROR_REGISTRAR_MUESTRA)
         #define RES_ERROR_REGISTRAR_MUESTRA 2
     #endif
-typedef struct nodo1{
-    char Nombre[20];       /* Nombre del jugador */
-    int Peso;              /* Cantidad de veces repetido */
-    int Tiros[4];          /* Cantidad de tiros por tipo. En 0 los strikes, 1 los spares, 2 las canaletas y 3 los demas */
-
-}NodoSamples;
-
-typedef struct nodo2{
-    char Liga[20];         /* Nombre de la liga */
-    char Nombre[20];       /* Nombre del jugador */
-
-}NodoPlayers;
 
 typedef struct{
-    TAB Samples;
-    TAB Players;
+    TABO Samples;
+    TABO Players;
     TDA_Lista_Ordenada Lista;
     int Creado;
 }TDA_Statistics;

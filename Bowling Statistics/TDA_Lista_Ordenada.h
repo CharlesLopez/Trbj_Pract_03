@@ -4,8 +4,8 @@
 
 typedef struct listaordenada{
     int (*FComparar)(void* E1, void* E2);
-    void* FClonar;
-    void* FDestruir;
+    void (*FClonar)(void* E1, void* E2);
+    void (*FDestruir)(void* E);
     int tamanio;
     TListaSimple LS;
 } TDA_Lista_Ordenada;
@@ -37,7 +37,5 @@ int obtenerCorrienteListaOrdenada(TDA_Lista_Ordenada listaOrdenada,void* elem);
 int destruirListaOrdenada(TDA_Lista_Ordenada* listaOrdenada);
     /*Pre-Condicion:Lista Creada
      Post-Condicion:Lista destruida, recursos liberados */
-
-
 
 #endif // __Lista_Ordenada__
